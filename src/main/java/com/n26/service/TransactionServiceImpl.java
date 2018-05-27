@@ -7,6 +7,7 @@ import java.util.TreeMap;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import com.n26.model.Statistic;
@@ -41,6 +42,7 @@ public class TransactionServiceImpl implements TransactionService {
 	 * @param transaction
 	 * @return 
 	 */
+	@Async
 	@Override
 	public void makeTransaction(Transaction transaction) {
 		LinkedList<Transaction> newList = new LinkedList<>();
